@@ -3,8 +3,8 @@
   --Twitter: hsl(203, 89%, 53%);
   --Insta: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
   --Youtube: hsl(348, 97%, 39%);
-  --increase: hsl(163, 72%, 41%);
-  --decrease: hsl(356, 69%, 56%);
+  --Increase: hsl(163, 72%, 41%);
+  --Decrease: hsl(356, 69%, 56%);
   line-height: 1;
 }
 
@@ -15,6 +15,7 @@
   --TextMain: hsl(0, 0%, 100%);
   --TextSecondary: hsl(228, 34%, 66%);
   --ToggleBg: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  --Brightness: 150%;
 }
 
 .dark .toggle-switch {
@@ -28,6 +29,7 @@
   --TextSecondary: hsl(228, 12%, 44%);
   --TextMain: hsl(230, 17%, 14%);
   --ToggleBg: hsl(230, 22%, 74%);
+  --Brightness: 95%;
 }
 
 .light .toggle-switch {
@@ -175,6 +177,11 @@ h3 {
   text-align: center;
 }
 
+.grid-container .card:hover {
+  -webkit-filter: brightness(var(--Brightness));
+          filter: brightness(var(--Brightness));
+}
+
 .grid-container .card .increase::before,
 .grid-container .card .decrease::before {
   display: inline-block;
@@ -185,7 +192,7 @@ h3 {
 }
 
 .grid-container .card .increase {
-  color: var(--increase);
+  color: var(--Increase);
 }
 
 .grid-container .card .increase::before {
@@ -193,7 +200,7 @@ h3 {
 }
 
 .grid-container .card .decrease {
-  color: var(--decrease);
+  color: var(--Decrease);
 }
 
 .grid-container .card .decrease::before {
@@ -376,6 +383,9 @@ h3 {
 }
 
 @media (min-width: 1140px) {
+  body {
+    height: 100vh;
+  }
   main {
     max-width: 1110px;
     left: calc(50vw - 555px);
